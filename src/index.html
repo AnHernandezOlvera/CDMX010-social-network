@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="home.js"></script>
+  <script src="form.js"></script>
+  <script src="post.js"></script>
+  <script src="singlepost.js"></script>
 </head>
 <body>
-  <script type="module" src="main.js"></script>
+  <ul>
+    <li><a href="#" onclick="onNavigate('/'); return false;">home</a></li>
+    <li><a href="#" onclick="onNavigate('/form'); return false;">form</a></li>
+    <li><a href="#" onclick="onNavigate('/post'); return false;">post</a></li>
+    <li><a href="#" onclick="onNavigate('/singlepost'); return false;">single post</a></li>
+  </ul>
+  <div id="root"></div>
+  <script src="routes.js"></script>
 </body>
 </html>
