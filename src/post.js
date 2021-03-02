@@ -1,3 +1,5 @@
-const post = `
-<h1>Soy post</h1>
+// import CardPost from './components/CardPost';
+
+export const post = `
+  <div id="post-container"></div>
 `;
