@@ -4,9 +4,10 @@ const routes = {
   '/': home,
   '/form': form,
   '/post': post,
-  '/singlepost': singlepost
+  '/singlepost': singlepost,
 };
 const rootDiv = document.getElementById('root');
+rootDiv.innerHTML = routes[window.location.pathname];
 const onNavigate = (pathname) => {
   window.history.pushState(
     {},
