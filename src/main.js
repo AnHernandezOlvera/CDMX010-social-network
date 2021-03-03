@@ -7,36 +7,15 @@ import { home } from './home.js';
 import { post } from './post.js';
 import CardPost from './components/CardPost.js';
 
-posting();
 const rootDiv = document.getElementById('root');
+rootDiv.innerHTML = routes[window.location.pathname];
+
 const postForm = document.getElementById('form');
-
-// vista al cargar home
-window.addEventListener('DOMContentLoaded', () => {
-  const home = routes[window.location.pathname];
-  home(rootDiv);
-  onGetPost((querySnapshot) => {
-    const postList = document.getElementById('post-list');
-    postList.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-    // contante para llamar la data del post
-      const post = doc.data();
-      // llama al id del post
-      post.id = doc.id;
-      // console.log(post);
-      postList.innerHTML += `
-        <a href="#" class="single-post"><h2 class="title-list">${post.title}</h2></a>
-        `;
-    });
-  });
-});
-
 // myFunction();
 // Funciones para botones de navegación
 document.getElementById('toHome').addEventListener('click', async (e) => {
   e.preventDefault();
   onNavigate('/');
-  home(rootDiv);
   onGetPost((querySnapshot) => {
     const postList = document.getElementById('post-list');
     postList.innerHTML = '';
@@ -98,7 +77,6 @@ toForm.addEventListener('click', async (e) => {
 document.getElementById('toPost').addEventListener('click', (e) => {
   e.preventDefault();
   onNavigate('/post');
-  post(rootDiv);
   onGetPost((querySnapshot) => {
     const postContainer = document.getElementById('post-container');
     postContainer.innerHTML = '';
