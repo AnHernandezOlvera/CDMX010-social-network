@@ -59,35 +59,35 @@ h1{
     color: #EE40A9;
 }
 
-#post-title{
-    width: 80%;
-    height: 48px;
-    border-radius: 20px;
-    padding-left: 20px;
-    border: none;
-    margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.6);
+form #title{
+  width: 80%;
+  height: 48px;
+  border-radius: 20px;
+  padding-left: 20px;
+  border: none;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.6);
 
 }
 
-#post-location{
-    width: 80%;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 20px; 
-    padding-left: 20px;
-    border: none;
-    margin-bottom: 10px;
+form #location{
+  width: 80%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px; 
+  padding-left: 20px;
+  border: none;
+  margin-bottom: 10px;
 }
 
-#post-description{
-    width: 80%;
-    min-width: 80%;
-    height: auto;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 20px;
-    padding-left: 20px;
-    border: none;
+form #description{
+  width: 80%;
+  min-width: 80%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding-left: 20px;
+  border: none;
 }
 
 ::placeholder{
