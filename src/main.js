@@ -4,7 +4,7 @@ import { onNavigate } from './routes.js';
 import { getPostById } from './lib/firebase.js';
 
 const postForm = document.getElementById('form');
-
+const postCard = document.getElementById('mainPost');
 // Funciones para botones de navegación
 document.getElementById('toHome').addEventListener('click', (e) => {
   e.preventDefault();
@@ -38,7 +38,8 @@ btnsEdit.forEach((btn) => {
 const btnsPost = document.querySelectorAll('.single-post');
 btnsPost.forEach((btn) => {
   btn.addEventListener('click', async (e) => {
-    e.preventDefault();
-    onNavigate('/singlepost');
+    const postById = await getPostById(e.target.dataset.id);
+    // eslint-disable-next-line no-undef
+    id = doc.id;
   });
 });

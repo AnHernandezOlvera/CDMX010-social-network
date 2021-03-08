@@ -29,7 +29,7 @@ body{
     background-size: cover;
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100%;
     position: relative; 
 }
 
@@ -133,7 +133,7 @@ footer i{
 #post-container{
     width: 100%;
     margin-top: 0px;
-    min-height: 100vh;
+    min-height: 100%;
     background: url(img/hand.jpg) no-repeat center;
     background-size: cover;
     display: flex;
@@ -141,6 +141,7 @@ footer i{
     flex-direction: column;
     background-color: #000;
     position: relative;
+    justify-content: center;
 }
 
 #post-container::before{
@@ -151,7 +152,7 @@ footer i{
     position: absolute;
 }
 
-#back-list{
+#post-list{
     width: 100%;
     min-height: 100vh;
     background: url(img/flowers.jpg) no-repeat center;
@@ -160,22 +161,17 @@ footer i{
     display: flex;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
-#post-list{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-#back-list::before{
+
+#post-list::before{
     content:'';
     background-color:rgba(0, 0, 0, 0.3);
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     position: absolute;
 }
 .title-list{
-    width: 80%;
     background: #FFFFFF;
     border-radius: 20px;
     color:#000000;
@@ -234,4 +230,16 @@ h2{
     padding: 10px;
     border-top: 1px dashed #000000;
 }
-
+#root{
+    padding: 70px 0 50px 0;
+    height: calc(100vh - 120px);;
+}
+.card:last-child {
+    margin-bottom: 100px!important;
+}
+.card:first-child {
+    margin-top: 30px!important;
+}
+#post-list .card{
+    min-width: 300px;
+}

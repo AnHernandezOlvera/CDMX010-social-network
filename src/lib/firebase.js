@@ -11,7 +11,7 @@ export const savePost = ({
 });
 
 // de la colección quiero un documento con el id que se obtiene al dar click
-export const getAllPosts = async () => { // quitamos id de parametro
+export const getAllPosts = async () => { // quitamos id de
   const querySnapshot = await dataBase.collection('post').get();
   const posts = [];
   querySnapshot.forEach((doc) => {
@@ -25,9 +25,14 @@ export const getAllPosts = async () => { // quitamos id de parametro
 
 export const getPostById = async (id) => {
   const doc = await dataBase.collection('post').doc(id).get();
-
-  return doc.data();
+  const post = doc.data();
+  post.id = id;
+  return post;
 };
+/* export const getPostById = async (id) => {
+  const doc = await dataBase.collection('post').doc(id).get();
+  return { ...doc.data(), id };
+}; */
 
 export const onGetPost = (callback) => dataBase.collection('post').onSnapshot(callback);
 // para eliminar un post da un parametro id
