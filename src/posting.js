@@ -37,6 +37,7 @@ export const posting = async (target) => {
       location: postForm.location.value,
       description: postForm.description.value,
       likes: post && post.likes ? post.likes : 0,
+      comments: '',
     };
 
     if (post) {

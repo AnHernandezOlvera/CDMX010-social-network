@@ -1,5 +1,5 @@
 import CardPost from './components/CardPost.js';
-import { deletePost, getPostById } from './lib/firebase.js';
+import { deletePost, getPostById, addComment, updatePost } from './lib/firebase.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from './routes.js';
 
@@ -39,5 +39,28 @@ export const singlepost = async (target) => {
       }
     });
   });
+  // Función para comentarios
+  const commentsForm = document.getElementById('commentsForm');
+  commentsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const comment = document.getElementById('comment').value;
+    console.log(comment);
+    const postData = {
+      title: post.title,
+      location: post.location,
+      description: post.description,
+      likes: post && post.likes ? post.likes : 0,
+      comments: post && post.comments ? post.comments : comment,
+    };
+    await updatePost(postId, postData);
+  });
+  // Función comentarios 2
+/*  const commentsForm = document.getElementById('commentsForm');
+  commentsForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const comment = document.getElementById('comment').value;
+    console.log(comment);
+    await addComment(postId, comment);
+  }); */
 };
 export default singlepost;

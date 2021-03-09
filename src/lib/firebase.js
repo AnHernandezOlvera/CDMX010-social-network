@@ -1,13 +1,13 @@
 // llamar a Firestore
 export const dataBase = firebase.firestore();
-
 export const savePost = ({
-  title, location, description, likes,
+  title, location, description, likes, comments,
 }) => dataBase.collection('post').doc().set({
   title,
   location,
   description,
   likes,
+  comments,
 });
 
 // de la colección quiero un documento con el id que se obtiene al dar click
@@ -38,5 +38,10 @@ export const onGetPost = (callback) => dataBase.collection('post').onSnapshot(ca
 // para eliminar un post da un parametro id
 export const deletePost = (id) => dataBase.collection('post').doc(id).delete();
 // función actuaalizar en firebase
-
 export const updatePost = (id, updatedPost) => dataBase.collection('post').doc(id).update(updatedPost);
+// función para enviar mensajes
+export function addComment(id, comment) {
+  firebase.firestore().ref('post/' + id + '/Comentarios').set({
+    comments: comment,
+  });
+}
