@@ -1,3 +1,4 @@
+import { login } from './login.js';
 import { home } from './home.js';
 import { posting } from './posting.js';
 // eslint-disable-next-line import/no-cycle
@@ -5,7 +6,8 @@ import { post } from './post.js';
 import { singlepost } from './singlepost.js';
 
 export const routes = {
-  '/': home,
+  '/': login,
+  '/home': home,
   '/posting': posting,
   '/post': post,
   '/singlepost': singlepost,

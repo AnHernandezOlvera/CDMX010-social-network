@@ -8,7 +8,7 @@ const postCard = document.getElementById('mainPost');
 // Funciones para botones de navegación
 document.getElementById('toHome').addEventListener('click', (e) => {
   e.preventDefault();
-  onNavigate('/');
+  onNavigate('/home');
 });
 
 document.getElementById('toPosting').addEventListener('click', async (e) => {

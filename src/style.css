@@ -290,3 +290,52 @@ h2{
     margin: 10px 0;
     border-bottom: 1px solid #000;
 }
+/* Estilos login */
+#loginView{
+    width: 100%;
+    min-height: 100vh;
+    background: url(img/luchadora.jpg) no-repeat center;
+    background-size: cover;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+
+#loginView::before{
+    content:'';
+    background-color:rgba(0, 0, 0, 0.3);
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+#loginForm{
+    width: 50%;
+    background: rgba(255, 255, 255, 0.88);
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+#loginForm input {
+    width: 80%;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px;
+}
+#enviar{
+    margin-top: 10px;
+    background: #ED47D2;
+    border-radius: 20px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+}

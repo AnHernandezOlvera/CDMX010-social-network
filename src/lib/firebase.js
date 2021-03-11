@@ -1,12 +1,13 @@
 // llamar a Firestore
 export const dataBase = firebase.firestore();
+const likes2 = [];
 export const savePost = ({
-  title, location, description, likes, comments,
+  title, location, description, comments,
 }) => dataBase.collection('post').doc().set({
   title,
   location,
   description,
-  likes,
+  likes2,
   comments,
 });
 
@@ -41,7 +42,16 @@ export const deletePost = (id) => dataBase.collection('post').doc(id).delete();
 export const updatePost = (id, updatedPost) => dataBase.collection('post').doc(id).update(updatedPost);
 // función para enviar mensajes
 export function addComment(id, comment) {
-  firebase.firestore().ref('post/' + id + '/Comentarios').set({
+  firebase.firestore().ref(`post/${id}/Comentarios`).set({
     comments: comment,
   });
 }
+// función para login
+export const createUsser = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+};
