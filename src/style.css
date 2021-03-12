@@ -59,6 +59,7 @@ h1{
     color: #EE40A9;
 }
 
+<<<<<<< HEAD
 #post-title{
     width: 80%;
     height: 48px;
@@ -88,6 +89,37 @@ h1{
     border-radius: 20px;
     padding-left: 20px;
     border: none;
+=======
+form #title{
+  width: 80%;
+  height: 48px;
+  border-radius: 20px;
+  padding-left: 20px;
+  border: none;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.6);
+
+}
+
+form #location{
+  width: 80%;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px; 
+  padding-left: 20px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+form #description{
+  width: 80%;
+  min-width: 80%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding-left: 20px;
+  border: none;
+>>>>>>> 8017969e46dcf8e6200d1e4b5787bab6faf4c41d
 }
 
 ::placeholder{
