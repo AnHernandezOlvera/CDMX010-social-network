@@ -46,12 +46,59 @@ export function addComment(id, comment) {
     comments: comment,
   });
 }
-// función para login
-export const createUsser = (email, password) => {
+// Verificar
+export function verify() {
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(() => {
+  // Email sent.
+    console.log('Enviando correo');
+  }).catch((error) => {
+  // An error happened.
+    console.log(error);
+  });
+}
+// función para registro
+export function registerUsser(email, password) {
   firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      verify();
+    })
+    .catch((error) => {
+      console.log(error);
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+}
+// acceder
+export function access(emailAccess, passwordAccess) {
+  firebase.auth().signInWithEmailAndPassword(emailAccess, passwordAccess)
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
     });
+}
+// Observer
+export function observer() {
+  firebase.auth().onAuthStateChanged((user) => {
+    const usuario = user;
+    if (usuario) {
+      const email = user.email;
+      const emailVerified = user.emailVerified;
+      const uid = user.uid;
+      const providerData = user.providerData;
+      // console.log(user);
+    } else {
+      console.log('no registrdo');
+    }
+  });
+}
+//
+export const validacion = async (emailAccess) => {
+  const state = await firebase.auth().onAuthStateChanged((user) => {
+    const emailVerified = user.emailVerified;
+  });
+  console.log(user);
+  return user;
 };
