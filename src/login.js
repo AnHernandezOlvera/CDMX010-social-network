@@ -22,11 +22,10 @@ export const login = async (target) => {
     e.preventDefault();
     const emailAccess = document.getElementById('emailAccess').value;
     const passwordAccess = document.getElementById('passwordAccess').value;
-    access(emailAccess, passwordAccess);
-    console.log(emailAccess, passwordAccess);
-    const usuario = await validacion(emailAccess);
-    console.log(usuario);
-    onNavigate('/home');
+    access(emailAccess, passwordAccess, onNavigate, target);
+    // console.log(emailAccess, passwordAccess);
+    // const usuario = await validacion(emailAccess);
+    // console.log(usuario);
   });
 };
 export default login;

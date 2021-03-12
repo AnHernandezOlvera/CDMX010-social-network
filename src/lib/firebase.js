@@ -71,8 +71,16 @@ export function registerUsser(email, password) {
     });
 }
 // acceder
-export function access(emailAccess, passwordAccess) {
+export function access(emailAccess, passwordAccess, onNavigate, target) {
   firebase.auth().signInWithEmailAndPassword(emailAccess, passwordAccess)
+    .then((doc) => {
+      console.log(doc);
+      onNavigate('/home');
+      const container = document.querySelectorAll('#post-list');
+      const h1 = document.createElement('h1');
+      h1.textContent = `Bienvenida ${doc.user.email}`;
+      container.appendChild(h1);
+    })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -95,7 +103,7 @@ export function observer() {
   });
 }
 //
-export const validacion = async (emailAccess) => {
+export const validacion = async (user) => {
   const state = await firebase.auth().onAuthStateChanged((user) => {
     const emailVerified = user.emailVerified;
   });
