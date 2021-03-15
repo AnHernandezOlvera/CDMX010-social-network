@@ -27,12 +27,12 @@ export const posting = async (target, firebase) => {
     postForm.title.value = post.title;
     postForm.location.value = post.location;
     postForm.description.value = post.description;
-    postForm.save.innerText = 'Actualizar'; 
+    postForm.save.innerText = 'Actualizar';
   }
 
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    onNavigate('/posting');
+    onNavigate('/home');
     const postData = {
       title: postForm.title.value,
       location: postForm.location.value,

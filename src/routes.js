@@ -1,22 +1,27 @@
+import { options } from './options.js';
+import { register } from './register.js';
+import { login } from './login.js';
 import { home } from './home.js';
 import { posting } from './posting.js';
 import { post } from './post.js';
-import { singlepost } from './single-post.js';
+import { singlepost } from './singlepost.js';
 
 const rootDiv = document.getElementById('root');
 
-
 export const routes = {
-  '/': home,
+  '/': options,
+  '/register': register,
+  '/login': login,
+  '/home': home,
   '/posting': posting,
   '/post': post,
   '/singlepost': singlepost,
 };
 
-let firebase = null
+let firebase = null;
 
 export const load = (firebaseFromMain) => {
-  firebase = firebaseFromMain
+  firebase = firebaseFromMain;
 };
 
 export const onNavigate = (path) => {

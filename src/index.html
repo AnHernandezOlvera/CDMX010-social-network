@@ -15,31 +15,14 @@
   <header class="header">
     <img class="logo" src="img/logo.png" alt="logo">
   </header>
-<<<<<<< HEAD
-  <div id="post-form">
-    <form id="form">
-      <h1>Escribe tu post</h1>
-      <input id="post-title" type="text" placeholder="Título">
-      <input id="post-location" type="text" placeholder="Coordenadas">
-      <textarea id="post-description" type="text" placeholder="Descripción" rows="8"></textarea>
-      <button id="save" value="submit">Publicar</button>
-  </div>
-  <div id="back-list"><div id="post-list"></div></div>
-  <div id="post-container"></div>
-    
- 
-  <footer>
-    <span><i class="fas fa-arrow-alt-circle-left"></i></span>
-    <span><i class="fas fa-plus-circle"></i></i></span>
-    <span><i class="fas fa-user-circle"></i></i></span>
-=======
   <div id= "root"></div>    
  
   <footer>
+    <div id="iconsFooter">
     <span><a id="toHome" href="#"><i class="fas fa-arrow-alt-circle-left"></i></a></span>
     <span><a id="toPosting" href="#"> <i class="fas fa-plus-circle"></i></a></span>
-    <span><a id="toPost" href="#"><i class="fas fa-user-circle"></i></a></span>
->>>>>>> 8017969e46dcf8e6200d1e4b5787bab6faf4c41d
+    <span><a id="signOut" href="#"><i class="fas fa-sign-out-alt"></i></a></span>
+    </div>
   </footer>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -49,7 +32,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -65,7 +48,6 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 </script>
   <script type="module" src="main.js"></script>
   <script type="module" src="./lib/firebase.js"></script>

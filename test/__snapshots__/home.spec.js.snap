@@ -3,9 +3,11 @@
 exports[`home should render 1`] = `
 "
     <div id=\\"back-list\\"><div id=\\"post-list\\">
-    <a href=\\"#\\" class=\\"single-post\\" data-id=\\"173763276327323\\">
-      <h2 class=\\"title-list\\">test</h2>
-    </a>
+  <div class=\\"card\\">
+    <a href=\\"/singlepost?id=173763276327323\\" class=\\"single-post\\" data-id=\\"173763276327323\\">
+      <h2 class=\\"title-list\\" data-id=\\"173763276327323\\">test</h2>
+    </a> 
+  </div>
   </div>
 </div>"
 `;

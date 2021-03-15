@@ -14,7 +14,8 @@
     "eslint": "eslint --ext .js src/ test/",
     "stylelint": "stylelint --aei src/**/*.css",
     "test": "jest --coverage --setupFilesAfterEnv=./jest.setup.js",
-    "start": "serve -s src/"
+    "start": "serve -s src/",
+    "test:watch": "jest --coverage --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
