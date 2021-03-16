@@ -1,8 +1,8 @@
 import { onNavigate } from './routes.js';
 
 export const options = async (target, firebase) => {
-  const templeteOptions= `
-    <div id="options" >
+  const templeteOptions = `
+    <div id="options">
         <button id="login">Acceder</button>
         <button id="register">Regístrarse</button>
     </div>

@@ -80,7 +80,7 @@ export const google = (onNavigate) => {
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       onNavigate('/home');
-      console.log('Google sign in');
+      console.log(result.user.uid);
     })
     .catch((err) => {
       console.log(err);
@@ -97,3 +97,21 @@ export function signOut(onNavigate) {
       console.log(error);
     });
 }
+/* // Ver información de usuario logueado
+export function observer() {
+  firebase.auth().onAuthStateChanged((user) => {
+    const uid = user.uid;
+      console.log(uid);
+      console.log(user);
+  });
+  return uid;
+} */
+// Modificación getPostByID
+export const observer = async () => {
+  const user = await firebase.auth().currentUser;
+  const userUid = user.uid;
+  return userUid;
+};
+export const updatePostLike = (id, user) => dataBase.collection('post').doc(id).update({
+  likes: firebase.firestore.FieldValue.arrayUnion(user),
+});

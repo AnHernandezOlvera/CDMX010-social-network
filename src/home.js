@@ -2,7 +2,7 @@ import { onNavigate } from './routes.js';
 
 export const home = async (target, firebase) => {
   const templeteHome = `
-    <div id="back-list"><div id="post-list"></div>
+    <div id="post-list"></div>
 `;
   target.innerHTML = templeteHome;
   const icons = document.getElementById('iconsFooter');

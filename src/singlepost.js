@@ -38,5 +38,15 @@ export const singlepost = async (target, firebase) => {
       }
     });
   });
+  // Botón Like
+  const like = document.getElementById('like');
+  like.addEventListener('click', async (e) => {
+    e.preventDefault();
+    console.log('hola like');
+    const user = await firebase.observer();
+    console.log(user);
+    await firebase.updatePostLike(postId, user);
+  });
 };
+
 export default singlepost;

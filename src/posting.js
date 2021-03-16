@@ -1,6 +1,5 @@
 import { onNavigate } from './routes.js';
 
-
 const getSearchParam = (param) => (new URLSearchParams(window.location.search)).get(param);
 
 export const posting = async (target, firebase) => {
@@ -32,17 +31,17 @@ export const posting = async (target, firebase) => {
 
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    onNavigate('/home');
     const postData = {
       title: postForm.title.value,
       location: postForm.location.value,
       description: postForm.description.value,
-      likes: post && post.likes ? post.likes : 0,
+      likes: post.likes,
     };
 
     if (post) {
       await firebase.updatePost(postId, postData);
       postForm.save.innerText = 'Guardar';
+      onNavigate('/singlepost'+'?'+ 'id=' + postId);
     } else {
       await firebase.savePost(postData);
       // limpia o resetea el formulario

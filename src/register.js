@@ -13,6 +13,8 @@ export const register = async (target, firebase) => {
   `;
     // eslint-disable-next-line no-param-reassign
   target.innerHTML = templeteLogin;
+  const loginForm = document.getElementById('loginForm');
+  loginForm.reset();
   const icons = document.getElementById('iconsFooter');
 icons.style.display = "none";
   const buttonEnviar = document.getElementById('enviar');

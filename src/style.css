@@ -150,6 +150,7 @@ footer i{
     flex-direction: column;
     background-color: #000;
     position: relative;
+    justify-content: center;
 }
 
 #post-container::before{
@@ -172,9 +173,32 @@ footer i{
 }
 #post-list{
     width: 100%;
+    min-height: 100%;
+    background: url(img/flowers.jpg) no-repeat center;
+    background-size: cover;
+    margin-top: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
+    position: relative;
+}
+
+.card:last-child {
+    margin-bottom: 100px!important;
+}
+.card:first-child {
+    margin-top: 30px!important;
+}
+#post-list .card{
+    min-width: 300px;
+    width: 80%;
+}
+.card a {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
 }
 #back-list::before{
     content:'';
@@ -184,7 +208,7 @@ footer i{
     position: absolute;
 }
 .title-list{
-    width: 80%;
+    width: 100%;
     background: #FFFFFF;
     border-radius: 20px;
     color:#000000;
@@ -248,16 +272,148 @@ h2{
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url(img/imagen-inicio.jpg) no-repeat center;
+    background-size: cover;
+}
+#options::before{
+    content:'';
+    background-color:rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+#login, #register{
+    width: 40%;
+    padding: 10px;
+    border: none;
+    position: relative;
+    margin: 50px 10px 0 10px;
+    border-radius: 20px;
+    background: #ED47D2;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+    color:#fff;
+}
+#root {
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 70px 0 50px 0;
+    height: calc(100vh - 120px);
 }
-#root {
+/*Estilos de la pantalla de acceso*/
+#loginView{
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: url(img/acceso.jpg) no-repeat center;
+    background-size: cover;
+}
+#loginView::before{
+    content:'';
+    background-color:rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+#loginForm{
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#loginView h4{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem;
+    color:#fff;
+​
+}
+#loginForm input{
+    width: 65%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.81);
+}
+#loginForm button{
+    width: 70%;
+    border: none;
+    border-radius: 20px;
+    background: rgba(237, 71, 210, 0.8);
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    color:#fff;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#loginForm button:hover{
+    background: rgba(237, 71, 210, 1);
+}
+/*Estilos de la pantalla de registro*/
+#registerView{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(img/register.png) no-repeat center;
+    background-size: cover;
+}
+#registerView::before{
+    content:'';
+    background-color:rgba(0, 0, 0, 0.2);
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+}
+#registerForm{
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#registerView h4{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 3rem;
+    color:#fff;
+​
+}
+#registerForm input{
+    width: 65%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.81);
+}
+#registerForm button{
+    width: 70%;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    color:#fff;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: rgba(237, 71, 210, 0.8);
+}
+#registerForm button:hover{
+    background: rgba(237, 71, 210, 1);
 }
 
