@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 // eslint-disable-next-line import/no-cycle
 import Footer, { registerEvents } from './components/Footer.js';
 import { onNavigate } from './routes.js';

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import CardPost from './components/CardPost.js';
 import Footer, { registerEvents } from './components/Footer.js';
 // eslint-disable-next-line import/no-cycle
@@ -14,7 +15,6 @@ export const singlepost = async (target, firebase) => {
   registerEvents(firebase);
   const postId = getSearchParam('id');
   const post = await firebase.getPostById(postId);
-  console.log(post);
   const postTemplates = CardPost(post);
   const postContainer = document.getElementById('post-container');
   postContainer.innerHTML = postTemplates;
@@ -41,14 +41,25 @@ export const singlepost = async (target, firebase) => {
       }
     });
   });
+  const likes = post.likes;
+  const heart = document.querySelector('.fa-heart');
+  const uid = await firebase.observer();
+  if (likes.includes(uid)) {
+    heart.style.color = 'rgba(237, 71, 210, 1)';
+  } else {
+    heart.style.color = '#000';
+  }
   // Botón Like
   const like = document.getElementById('like');
   like.addEventListener('click', async (e) => {
-    e.preventDefault();
-    console.log('hola like');
-    const user = await firebase.observer();
-    console.log(user);
-    await firebase.updatePostLike(postId, user);
+    const uid = await firebase.observer();
+    if (likes.includes(uid)) {
+      await firebase.updatePostUnLike(postId, uid);
+      location.reload();
+    } else {
+      await firebase.updatePostLike(postId, uid);
+      location.reload();
+    }
   });
 };
 

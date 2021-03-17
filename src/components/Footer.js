@@ -1,4 +1,5 @@
-import { onNavigate } from "../routes.js";
+/* eslint-disable import/no-cycle */
+import { onNavigate } from '../routes.js';
 
 const Footer = () => `
 <footer>
@@ -11,23 +12,22 @@ const Footer = () => `
 `;
 
 export const registerEvents = (firebase) => {
-    // Funciones para botones de navegación
-    document.getElementById('toHome').addEventListener('click', (e) => {
-        e.preventDefault();
-        onNavigate('/home');
-    });
-  
+  // Funciones para botones de navegación
+  document.getElementById('toHome').addEventListener('click', (e) => {
+    e.preventDefault();
+    onNavigate('/home');
+  });
+
   document.getElementById('toPosting').addEventListener('click', async (e) => {
     e.preventDefault();
     onNavigate('/posting');
   });
   // Botón de salir
-const signOutButton = document.getElementById('signOut');
-signOutButton.addEventListener('click', async (e) => {
-  e.preventDefault();
-  await firebase.signOut(onNavigate);
-});
+  const signOutButton = document.getElementById('signOut');
+  signOutButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await firebase.signOut(onNavigate);
+  });
 };
-
 
 export default Footer;

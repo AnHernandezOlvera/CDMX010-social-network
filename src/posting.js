@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-cycle */
 import Footer, { registerEvents } from './components/Footer.js';
 import { onNavigate } from './routes.js';
 
@@ -43,7 +45,7 @@ export const posting = async (target, firebase) => {
     if (post) {
       await firebase.updatePost(postId, postData);
       postForm.save.innerText = 'Guardar';
-      onNavigate('/singlepost'+'?'+ 'id=' + postId);
+      onNavigate('/singlepost' + '?' + 'id=' + postId);
     } else {
       await firebase.savePost(postData);
       // limpia o resetea el formulario

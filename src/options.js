@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-cycle */
 import { onNavigate } from './routes.js';
 
 export const options = async (target) => {
@@ -10,12 +12,13 @@ export const options = async (target) => {
   target.innerHTML = templeteOptions;
   const loginButton = document.getElementById('login');
   loginButton.addEventListener('click', (e) => {
+    e.preventDefault();
     onNavigate('/login');
   });
   const registerButton = document.getElementById('register');
   registerButton.addEventListener('click', (e) => {
+    e.preventDefault();
     onNavigate('/register');
   });
 };
-
 export default options;

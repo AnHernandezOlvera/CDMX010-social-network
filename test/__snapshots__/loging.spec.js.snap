@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login should take me to the post when I click the post title 1`] = `
+"
+        <div id=\\"loginView\\">
+        <form id=\\"loginForm\\">
+        <h4>Acceso</h4>
+        <label for=\\"emailAccess\\">Email</label>
+        <input name=\\"email \\" type=\\"email\\" id=\\"emailAccess\\" placeholder=\\"Email\\">
+        <label for=\\"passwordAccess\\">Password</label>
+        <input type=\\"password\\" id=\\"passwordAccess\\" placeholder=\\"Password\\">
+        <input id=\\"access\\" type=\\"submit\\" value=\\"Acceder\\">
+        <button id=\\"accessGoogle\\">Acceder con Google</button>
+        </form>
+        </div>
+  "
+`;

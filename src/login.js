@@ -6,9 +6,11 @@ export const login = async (target, firebase) => {
         <div id="loginView">
         <form id="loginForm">
         <h4>Acceso</h4>
-        <input type="email" id="emailAccess" placeholder="Email" />
+        <label for="emailAccess">Email</label>
+        <input name= "email "type="email" id="emailAccess" placeholder="Email"/>
+        <label for="passwordAccess">Password</label>
         <input type="password" id="passwordAccess" placeholder="Password" />
-        <button id="access">Acceder</button>
+        <input id="access" type="submit" value="Acceder">
         <button id="accessGoogle">Acceder con Google</button>
         </form>
         </div>

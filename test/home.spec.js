@@ -1,8 +1,10 @@
+/* eslint-disable jest/no-disabled-tests */
+/* eslint-disable max-len */
 // importamos funciones que nos ayudaran a simular las interacciones del usario con la UI
+// importamos funciones que nos ayudaran a simular las interacciones del usario con la UI
+// import { screen, waitFor } from '@testing-library/dom';
+// import userEvent from '@testing-library/user-event';
 import { home } from '../src/home.js';
-// importamos funciones que nos ayudaran a simular las interacciones del usario con la UI
-import { screen, waitFor } from '@testing-library/dom';
-import userEvent from '@testing-library/user-event';
 
 describe('home', () => {
   // Creamos un root element en nuestro DOM para que nos sirva de contenedor para nuesta vista/componente principal Login
@@ -14,7 +16,7 @@ describe('home', () => {
   it('should render', async () => {
     const target = document.getElementById('root');
     const getAllPosts = jest.fn().mockImplementation(() => Promise.resolve([
-      { id: '173763276327323', title: 'test' }
+      { id: '173763276327323', title: 'test' },
     ]));
     const firebase = { getAllPosts };
     await home(target, firebase);
@@ -22,8 +24,9 @@ describe('home', () => {
     expect(target.innerHTML).toMatchSnapshot();
   });
 
-  it.skip('should take me to the post when I click the post title', () => {npm
-      
+  it.skip('should take me to the post when I click the post title', () => {
+    npm;
+
     const target = document.getElementById('root');
 
     // Mockeamos la funcion de login de Firebase la cual sera invocada cuando el usuario haga click sobre el boton "Sign In"
@@ -40,7 +43,6 @@ describe('home', () => {
     userEvent.type(screen.getByLabelText('Email'), email);
     userEvent.type(screen.getByLabelText('Password'), password);
     userEvent.click(screen.getByDisplayValue('Sign In'));
-
     // Verificamos que nuestro mock de la funcion login de firebase es llamada con el email y password que el usuario escribio mas arriba
     // Referencia: https://jestjs.io/docs/en/expect#tohavebeencalledwitharg1-arg2-
     expect(signIn).toHaveBeenCalledWith(email, password);

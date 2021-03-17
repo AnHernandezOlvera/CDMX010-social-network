@@ -304,7 +304,7 @@ h2{
     align-items: center;
     justify-content: center;
     padding: 70px 0 50px 0;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 70px);
 }
 /*Estilos de la pantalla de acceso*/
 #loginView{
@@ -332,20 +332,19 @@ h2{
     align-items: center;
     justify-content: center;
 }
-#loginView h4{
+#loginView h4 {
     text-align: center;
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
     color:#fff;
-​
 }
 #loginForm input{
     width: 65%;
     border: none;
-    border-radius: 20px;
+    border-radius:20 px;
     padding: 10px;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.81);
+    margin-bottom:20px;
+    background:rgba(255, 255, 255, 0.81);
 }
 #loginForm button{
     width: 70%;
@@ -392,7 +391,6 @@ h2{
     font-family: 'Amatic SC', cursive;
     font-size: 3rem;
     color:#fff;
-​
 }
 #registerForm input{
     width: 65%;
@@ -416,4 +414,21 @@ h2{
 #registerForm button:hover{
     background: rgba(237, 71, 210, 1);
 }
-
+#access{
+    width: 70%!important;
+    border: none!important;
+    border-radius: 20px;
+    background: rgba(237, 71, 210, 0.8)!important;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+    color:#fff;
+    padding: 5px!important;
+    margin-bottom: 10px!important;
+}
+#like{
+    border: none;
+    background: rgba(255, 255, 255, 0);
+}
+#like span{
+    color: rgba(237, 71, 210, 1);
+}

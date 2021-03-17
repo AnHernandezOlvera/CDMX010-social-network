@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-unused-vars */
 // llamar a Firestore
 const dataBase = firebase.firestore();
 
@@ -40,7 +42,6 @@ export const updatePost = (id, updatedPost) => dataBase.collection('post').doc(i
 export const access = (emailAccess, passwordAccess, onNavigate) => {
   firebase.auth().signInWithEmailAndPassword(emailAccess, passwordAccess)
     .then((user) => {
-      console.log(user);
       onNavigate('/home');
     })
     .catch((error) => {
@@ -53,11 +54,9 @@ export const access = (emailAccess, passwordAccess, onNavigate) => {
 export function verify() {
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {
-  // Email sent.
-    console.log('Enviando correo');
+  // Email sent
   }).catch((error) => {
-  // An error happened.
-    console.log(error);
+  // An error happened
   });
 }
 // función para registro
@@ -77,38 +76,28 @@ export const google = (onNavigate) => {
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       onNavigate('/home');
-      console.log(result.user.uid);
     })
     .catch((err) => {
-      console.log(err);
     });
 };
 // Función signOut
 export function signOut(onNavigate) {
   firebase.auth().signOut()
     .then(() => {
-      console.log('Saliendo');
       onNavigate('/');
     })
     .catch((error) => {
-      console.log(error);
     });
 }
-/* // Ver información de usuario logueado
-export function observer() {
-  firebase.auth().onAuthStateChanged((user) => {
-    const uid = user.uid;
-      console.log(uid);
-      console.log(user);
-  });
-  return uid;
-} */
-// Modificación getPostByID
+// Obtener información de usurio
 export const observer = async () => {
   const user = await firebase.auth().currentUser;
   const userUid = user.uid;
   return userUid;
 };
-export const updatePostLike = (id, user) => dataBase.collection('post').doc(id).update({
-  likes: firebase.firestore.FieldValue.arrayUnion(user),
+export const updatePostLike = (id, uid) => dataBase.collection('post').doc(id).update({
+  likes: firebase.firestore.FieldValue.arrayUnion(uid),
+});
+export const updatePostUnLike = (id, uid) => dataBase.collection('post').doc(id).update({
+  likes: firebase.firestore.FieldValue.arrayRemove(uid),
 });
