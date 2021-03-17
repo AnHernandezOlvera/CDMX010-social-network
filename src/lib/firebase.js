@@ -68,10 +68,7 @@ export function registerUsser(email, password, onNavigate) {
       onNavigate('/login');
     })
     .catch((error) => {
-      console.log(error);
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
+      alert('usuario ya registrado');
     });
 }
 // Función de registro con google

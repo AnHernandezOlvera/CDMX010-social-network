@@ -2,12 +2,21 @@
 
 exports[`home should render 1`] = `
 "
-    <div id=\\"back-list\\"><div id=\\"post-list\\">
+    <div id=\\"post-list\\">
   <div class=\\"card\\">
     <a href=\\"/singlepost?id=173763276327323\\" class=\\"single-post\\" data-id=\\"173763276327323\\">
       <h2 class=\\"title-list\\" data-id=\\"173763276327323\\">test</h2>
     </a> 
   </div>
   </div>
-</div>"
+    
+<footer>
+    <div id=\\"iconsFooter\\" class=\\"iconsfooter\\">
+    <span><a id=\\"toHome\\" href=\\"#\\"><i class=\\"fas fa-arrow-alt-circle-left\\"></i></a></span>
+    <span><a id=\\"toPosting\\" href=\\"#\\"> <i class=\\"fas fa-plus-circle\\"></i></a></span>
+    <span><a id=\\"signOut\\" href=\\"#\\"><i class=\\"fas fa-sign-out-alt\\"></i></a></span>
+    </div>
+  </footer>
+
+"
 `;

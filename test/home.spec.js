@@ -4,7 +4,6 @@ import { home } from '../src/home.js';
 import { screen, waitFor } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 
-
 describe('home', () => {
   // Creamos un root element en nuestro DOM para que nos sirva de contenedor para nuesta vista/componente principal Login
   beforeEach(() => {
@@ -15,7 +14,7 @@ describe('home', () => {
   it('should render', async () => {
     const target = document.getElementById('root');
     const getAllPosts = jest.fn().mockImplementation(() => Promise.resolve([
-      { id: '173763276327323', title: 'test'}
+      { id: '173763276327323', title: 'test' }
     ]));
     const firebase = { getAllPosts };
     await home(target, firebase);

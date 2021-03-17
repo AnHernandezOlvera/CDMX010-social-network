@@ -1,12 +1,18 @@
+// eslint-disable-next-line import/no-cycle
+import Footer, { registerEvents } from './components/Footer.js';
 import { onNavigate } from './routes.js';
 
 export const home = async (target, firebase) => {
   const templeteHome = `
     <div id="post-list"></div>
+    ${Footer()}
 `;
+  // eslint-disable-next-line no-param-reassign
   target.innerHTML = templeteHome;
-  const icons = document.getElementById('iconsFooter');
-icons.style.display = "flex";
+  registerEvents(firebase);
+  // const icons = document.getElementById('iconsFooter');
+  // icons.style.opacity = 1;
+  // icons.style.display = 'flex';
   const posts = await firebase.getAllPosts();
   const postTemplates = posts.map((post) => `
   <div class= "card">
@@ -28,5 +34,4 @@ icons.style.display = "flex";
     });
   });
 };
-
 export default home;

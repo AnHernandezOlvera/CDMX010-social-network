@@ -1,3 +1,4 @@
+import Footer, { registerEvents } from './components/Footer.js';
 import { onNavigate } from './routes.js';
 
 const getSearchParam = (param) => (new URLSearchParams(window.location.search)).get(param);
@@ -13,9 +14,10 @@ export const posting = async (target, firebase) => {
       <button id="save" value="submit">Publicar</button>
     </form>  
   </div>
+  ${Footer()}
   `;
   target.innerHTML = html;
-
+  registerEvents(firebase);
   const postId = getSearchParam('id');
   const postForm = document.getElementById('form');
   postForm.title.focus();

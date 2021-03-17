@@ -9,16 +9,7 @@ homeViewFunction(rootDiv, firebase);
 
 const postForm = document.getElementById('form');
 
-// Funciones para botones de navegación
-document.getElementById('toHome').addEventListener('click', (e) => {
-  e.preventDefault();
-  onNavigate('/home');
-});
 
-document.getElementById('toPosting').addEventListener('click', async (e) => {
-  e.preventDefault();
-  onNavigate('/posting');
-});
 
 /* document.getElementById('toPost').addEventListener('click', (e) => {
   e.preventDefault();
@@ -47,9 +38,4 @@ btnsPost.forEach(btn => {
     onNavigate('/singlepost');
   });
 });
-// Botón de salir
-const signOutButton = document.getElementById('signOut');
-signOutButton.addEventListener('click', async (e) => {
-  e.preventDefault();
-  await firebase.signOut(onNavigate);
-});
+

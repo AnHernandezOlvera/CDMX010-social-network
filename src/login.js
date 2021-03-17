@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from './routes.js';
 
 export const login = async (target, firebase) => {
@@ -14,8 +15,8 @@ export const login = async (target, firebase) => {
   `;
     // eslint-disable-next-line no-param-reassign
   target.innerHTML = templeteLogin;
-const icons = document.getElementById('iconsFooter');
-icons.style.display = "none";
+  // const icons = document.getElementById('iconsFooter');
+  // icons.style.opacity = 0;
 
   const accessButton = document.getElementById('access');
   accessButton.addEventListener('click', async (e) => {
@@ -25,10 +26,10 @@ icons.style.display = "none";
     await firebase.access(emailAccess, passwordAccess, onNavigate);
   });
   // Acceso con Google
-const googleButton = document.querySelector('#accessGoogle');
-googleButton.addEventListener('click', async (e) => {
-  e.preventDefault();
-  await firebase.google(onNavigate); 
-})
+  const googleButton = document.querySelector('#accessGoogle');
+  googleButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await firebase.google(onNavigate);
+  });
 };
 export default login;

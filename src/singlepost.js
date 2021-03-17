@@ -1,4 +1,5 @@
 import CardPost from './components/CardPost.js';
+import Footer, { registerEvents } from './components/Footer.js';
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from './routes.js';
 
@@ -6,9 +7,11 @@ const getSearchParam = (param) => (new URLSearchParams(window.location.search)).
 export const singlepost = async (target, firebase) => {
   const templeteSinglePost = `
       <div id="post-container"></div>
+      ${Footer()}
     `;
   // eslint-disable-next-line no-param-reassign
   target.innerHTML = templeteSinglePost;
+  registerEvents(firebase);
   const postId = getSearchParam('id');
   const post = await firebase.getPostById(postId);
   console.log(post);

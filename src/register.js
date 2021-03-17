@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from './routes.js';
 
 export const register = async (target, firebase) => {
@@ -16,7 +17,7 @@ export const register = async (target, firebase) => {
   const loginForm = document.getElementById('loginForm');
   loginForm.reset();
   const icons = document.getElementById('iconsFooter');
-icons.style.display = "none";
+  icons.style.display = 'none';
   const buttonEnviar = document.getElementById('enviar');
   buttonEnviar.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -24,11 +25,11 @@ icons.style.display = "none";
     const password = document.getElementById('password').value;
     await firebase.registerUsser(email, password, onNavigate);
   });
-// Registro con Google
-const googleButton = document.querySelector('#registerGoogle');
-googleButton.addEventListener('click', async (e) => {
-  e.preventDefault();
-  await firebase.google(onNavigate); 
-})
+  // Registro con Google
+  const googleButton = document.querySelector('#registerGoogle');
+  googleButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await firebase.google(onNavigate);
+  });
 };
 export default register;

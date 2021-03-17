@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { options } from './options.js';
 import { register } from './register.js';
 import { login } from './login.js';
