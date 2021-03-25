@@ -16,8 +16,8 @@ export const register = async (target, firebase) => {
   target.innerHTML = templeteLogin;
   const loginForm = document.getElementById('loginForm');
   loginForm.reset();
-  const icons = document.getElementById('iconsFooter');
-  icons.style.display = 'none';
+  // const icons = document.getElementById('iconsFooter');
+  // icons.style.display = 'none';
   const buttonEnviar = document.getElementById('enviar');
   buttonEnviar.addEventListener('click', async (e) => {
     e.preventDefault();
